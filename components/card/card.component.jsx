@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { Card, Paragraph, Button } from 'react-native-paper';
-
+import {colors}  from '../../utils/colors';
 
 const styles = StyleSheet.create({
     card: {
-        backgroundColor: '#EBF5F7',
+        backgroundColor: colors.cinza,
         margin: 10,
         borderRadius: 20,
         flex: 1,
@@ -13,14 +13,14 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
     },
     content: {
-        backgroundColor: '#FAE8E0',
+        backgroundColor: colors.rosa,
     },
     cover: {
         height: 220,
     },
     actions: {
         justifyContent: 'space-around',
-        backgroundColor: '#FAE8E0',
+        backgroundColor: colors.rosa,
     },
 
 

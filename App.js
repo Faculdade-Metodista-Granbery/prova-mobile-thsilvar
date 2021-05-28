@@ -3,7 +3,7 @@ import { StyleSheet, Text, SafeAreaView, FlatList, StatusBar } from 'react-nativ
 import CardQuote from './components/card/card.component';
 import firebase from './services/firebase';
 import {useList} from 'react-firebase-hooks/database';
-
+import {colors}  from './utils/colors';
 
 
 export default function App() {
@@ -36,7 +36,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#EBF5F7',
+    backgroundColor: colors.white,
     alignItems: 'center',
     justifyContent: 'center',
   },
