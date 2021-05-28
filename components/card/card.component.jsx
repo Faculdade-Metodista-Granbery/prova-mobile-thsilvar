@@ -13,13 +13,17 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
     },
     content: {
-        backgroundColor: 'blue',
+        backgroundColor: '#FAE8E0',
     },
     cover: {
         height: 220,
     },
-    button:{
-        alignItems:'center'
+    actions:{
+        justifyContent: 'space-around',
+        backgroundColor: '#f7c2c2',
+    },
+    text:{
+        
     }
    
 });
@@ -46,9 +50,9 @@ const CardQuote = ({ task, profileImg }) => {
             <Card.Content style={styles.content}>
                 
             </Card.Content>
-            <Card.Actions style={styles.button}>
+            <Card.Actions style={styles.actions}>
 
-                <Button style={styles.button}
+                <Button
                     icon={playButton}
                     color="#541616"
                     labelStyle={{fontSize: 70}}
@@ -56,7 +60,7 @@ const CardQuote = ({ task, profileImg }) => {
                 />
                 
             </Card.Actions>
-            <Paragraph >{task}</Paragraph>
+            <Paragraph style={styles.text}>{task}</Paragraph>
         </Card>
     )
 }
