@@ -51,7 +51,7 @@ const CardQuote = ({ task, profileImg }) => {
                 <Button
                     icon={playButton}
                     color="#541616"
-                    labelStyle={{ fontSize: 100 }}
+                    labelStyle={{ fontSize: 90}}
                     onPress={handlePlay}
                 />
             </Card.Actions>
