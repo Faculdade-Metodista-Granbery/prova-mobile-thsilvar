@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
-import { Card, Paragraph, Button ,BottomNavigation, Text } from 'react-native-paper';
+import { Card, Paragraph, Button } from 'react-native-paper';
 
 
 const styles = StyleSheet.create({
@@ -44,18 +44,7 @@ const CardQuote = ({ task, profileImg }) => {
         }
     }
    
-    const [index, setIndex] = React.useState(0);
-    const [routes] = React.useState([
-      { key: 'music', title: 'Music', icon: 'numeric-1-circle' },
-      { key: 'albums', title: 'Albums', icon: 'numeric-2-circle' },
-      { key: 'recents', title: 'Recents', icon: 'numeric-3-circle' },
-    ]);
-  
-    const renderScene = BottomNavigation.SceneMap({
-      music: MusicRoute,
-      albums: AlbumsRoute,
-      recents: RecentsRoute,
-    });
+ 
   
 
     return (
@@ -78,11 +67,7 @@ const CardQuote = ({ task, profileImg }) => {
             <Card.Actions style={styles.actions}>
                 <Paragraph style={styles.text}>{task}</Paragraph>
             </Card.Actions>
-            <BottomNavigation
-      navigationState={{ index, routes }}
-      onIndexChange={setIndex}
-      renderScene={renderScene}
-    />
+  
         </Card>
         
     )

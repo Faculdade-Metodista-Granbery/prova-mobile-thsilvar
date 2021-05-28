@@ -1,14 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { StyleSheet, Text, SafeAreaView, FlatList, StatusBar } from 'react-native';
 import CardQuote from './components/card/card.component';
+import firebase from './services/firebase';
+import {useList} from 'react-firebase-hooks/database';
 
-const list = [
-  { id: 1, task: 'Suco de gratidão + clorofila', profileImg: 'https://image.freepik.com/free-vector/flat-night-sky-background_23-2148032671.jpg' },
-  { id: 2, task: 'Aplaudir o por do sol', profileImg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTevLH9vqcGBf4kYYXN1sEafET9xBaEjxUOMg&usqp=CAU' },
-  { id: 3, task: '5 séries de namastê', profileImg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa6OUSY2144YwI6mFLlxCKdyvkmKn6yLEoLA&usqp=CAU' },
-]
+
 
 export default function App() {
+
+  const [cards,loading, erro] = useList(firebase.getAll());
+  
+
   return (
 
     <SafeAreaView style={styles.container}>
@@ -17,11 +19,13 @@ export default function App() {
         backgroundColor={"#c64242"}
       />
       <FlatList
-        data={list}
+        data={cards}
         keyExtractor={item => item.id}
         renderItem={({ item }) =>
-          <CardQuote task={item.task}
-            profileImg={item.profileImg} />
+          <CardQuote 
+            key={item.val().id}
+           task={item.val().task}
+           profileImg={item.val().profile} />
         }
       >
       </FlatList>
