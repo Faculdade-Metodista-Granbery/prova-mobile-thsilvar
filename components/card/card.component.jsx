@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Card, Paragraph } from 'react-native-paper';
+import { Card, Paragraph, Button } from 'react-native-paper';
 
 
 const styles = StyleSheet.create({
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     },
 });
 
-const CardQuote = () => {
+const CardQuote = ({task, profileImg}) => {
 
     return (
         <Card style={styles.card}>
@@ -29,9 +29,10 @@ const CardQuote = () => {
                 resizeMode={`cover`}
                 source={{ uri: '' }} />
             <Card.Content style={styles.content}>
+            <Paragraph >{task}</Paragraph>
             </Card.Content>
             <Card.Actions>
-                <Paragraph>{task}</Paragraph>
+          
             </Card.Actions>
         </Card>
     )
