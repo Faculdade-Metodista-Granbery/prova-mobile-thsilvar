@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, FlatList, StatusBar } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, FlatList, StatusBar } from 'react-native';
 import CardQuote from './components/card/card.component';
 
 const list = [
@@ -21,7 +21,7 @@ export default function App() {
         keyExtractor={item => item.id}
         renderItem={({ item }) =>
           <CardQuote task={item.task}
-           profileImg= {item.profileImg} />
+            profileImg={item.profileImg} />
         }
       >
       </FlatList>
