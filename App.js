@@ -14,7 +14,7 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <StatusBar
         animated={true}
-        backgroundColor="#c64242"
+        backgroundColor="#fff
        />
           <CardQuote />
 
