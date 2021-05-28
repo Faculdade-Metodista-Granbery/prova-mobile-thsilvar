@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { Card, Paragraph, Button } from 'react-native-paper';
 
@@ -20,14 +20,14 @@ const styles = StyleSheet.create({
     },
 });
 
-const CardQuote = ({task, profileImg}) => {
+const CardQuote = ({ task, profileImg }) => {
 
-    const[likeButton, setLikebutton] = useState("heart-outline");
+    const [likeButton, setLikebutton] = useState("heart-outline");
 
-    const handleLike = ()=>{
-        if(likeButton === "heart-outline"){
+    const handleLike = () => {
+        if (likeButton === "heart-outline") {
             setLikebutton("cards-heart")
-        }else{
+        } else {
             setLikebutton("heart-outline")
         }
     }
@@ -38,16 +38,12 @@ const CardQuote = ({task, profileImg}) => {
             <Card.Cover
                 style={styles.cover}
                 resizeMode={`cover`}
-                source={{ uri: profileImg}} />
+                source={{ uri: profileImg }} />
             <Card.Content style={styles.content}>
-            <Paragraph >{task}</Paragraph>
+                <Paragraph >{task}</Paragraph>
             </Card.Content>
             <Card.Actions>
-            <Button
-                    icon="share-variant"
-                    color="#541616"
-                    labelStyle={{ fontSize: 24 }}
-                />
+
                 <Button
                     icon={likeButton}
                     color="#541616"
