@@ -18,14 +18,14 @@ const styles = StyleSheet.create({
     cover: {
         height: 220,
     },
-    actions:{
+    actions: {
         justifyContent: 'space-around',
         backgroundColor: '#f7c2c2',
     },
-    text:{
-        
+    text: {
+
     }
-   
+
 });
 
 const CardQuote = ({ task, profileImg }) => {
@@ -48,19 +48,19 @@ const CardQuote = ({ task, profileImg }) => {
                 resizeMode={`cover`}
                 source={{ uri: profileImg }} />
             <Card.Content style={styles.content}>
-                
             </Card.Content>
             <Card.Actions style={styles.actions}>
-
                 <Button
                     icon={playButton}
                     color="#541616"
-                    labelStyle={{fontSize: 70}}
+                    labelStyle={{ fontSize: 70 }}
                     onPress={handlePlay}
                 />
-                
             </Card.Actions>
-            <Paragraph style={styles.text}>{task}</Paragraph>
+            <Card.Actions style={styles.actions}>
+                <Paragraph style={styles.text}>{task}</Paragraph>
+            </Card.Actions>
+
         </Card>
     )
 }
