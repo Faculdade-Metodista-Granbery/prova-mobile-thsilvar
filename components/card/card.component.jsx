@@ -22,17 +22,38 @@ const styles = StyleSheet.create({
 
 const CardQuote = ({task, profileImg}) => {
 
+    const[likeButton, setLikebutton] = useState("heart-outline");
+
+    const handleLike = ()=>{
+        if(likeButton === "heart-outline"){
+            setLikebutton("cards-heart")
+        }else{
+            setLikebutton("heart-outline")
+        }
+    }
+
+
     return (
         <Card style={styles.card}>
             <Card.Cover
                 style={styles.cover}
                 resizeMode={`cover`}
-                source={{ uri: '' }} />
+                source={{ uri: profileImg}} />
             <Card.Content style={styles.content}>
             <Paragraph >{task}</Paragraph>
             </Card.Content>
             <Card.Actions>
-          
+            <Button
+                    icon="share-variant"
+                    color="#541616"
+                    labelStyle={{ fontSize: 24 }}
+                />
+                <Button
+                    icon={likeButton}
+                    color="#541616"
+                    labelStyle={{ fontSize: 24 }}
+                    onPress={handleLike}
+                />
             </Card.Actions>
         </Card>
     )
