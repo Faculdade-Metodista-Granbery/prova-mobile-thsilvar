@@ -13,22 +13,26 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
     },
     content: {
-        backgroundColor: '#FAE8E0',
+        backgroundColor: 'blue',
     },
     cover: {
         height: 220,
     },
+    button:{
+        alignItems:'center'
+    }
+   
 });
 
 const CardQuote = ({ task, profileImg }) => {
 
-    const [likeButton, setLikebutton] = useState("heart-outline");
+    const [playButton, setPlaybutton] = useState("play");
 
-    const handleLike = () => {
-        if (likeButton === "heart-outline") {
-            setLikebutton("cards-heart")
+    const handlePlay = () => {
+        if (playButton === "play") {
+            setPlaybutton("math-norm")
         } else {
-            setLikebutton("heart-outline")
+            setPlaybutton("play")
         }
     }
 
@@ -40,17 +44,19 @@ const CardQuote = ({ task, profileImg }) => {
                 resizeMode={`cover`}
                 source={{ uri: profileImg }} />
             <Card.Content style={styles.content}>
-                <Paragraph >{task}</Paragraph>
+                
             </Card.Content>
-            <Card.Actions>
+            <Card.Actions style={styles.button}>
 
-                <Button
-                    icon={likeButton}
+                <Button style={styles.button}
+                    icon={playButton}
                     color="#541616"
-                    labelStyle={{ fontSize: 24 }}
-                    onPress={handleLike}
+                    labelStyle={{fontSize: 70}}
+                    onPress={handlePlay}
                 />
+                
             </Card.Actions>
+            <Paragraph >{task}</Paragraph>
         </Card>
     )
 }
