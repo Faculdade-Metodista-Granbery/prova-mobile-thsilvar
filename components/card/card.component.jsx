@@ -20,11 +20,9 @@ const styles = StyleSheet.create({
     },
     actions: {
         justifyContent: 'space-around',
-        backgroundColor: '#f7c2c2',
+        backgroundColor: '#FAE8E0',
     },
-    text: {
 
-    }
 
 });
 
@@ -53,7 +51,7 @@ const CardQuote = ({ task, profileImg }) => {
                 <Button
                     icon={playButton}
                     color="#541616"
-                    labelStyle={{ fontSize: 70 }}
+                    labelStyle={{ fontSize: 100 }}
                     onPress={handlePlay}
                 />
             </Card.Actions>
