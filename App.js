@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { StyleSheet, Text, SafeAreaView, FlatList, StatusBar } from 'react-native';
 import CardQuote from './components/card/card.component';
 import databaseFactory from './factories/databaseFactory';
@@ -29,8 +29,11 @@ export default function App() {
            task={item.val().task}
            profileImg={item.val().profile} />
         }
-      >
+    
+     >
+  
       </FlatList>
+     
     </SafeAreaView>
   );
 }
