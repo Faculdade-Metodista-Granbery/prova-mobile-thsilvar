@@ -1,14 +1,16 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, SafeAreaView, FlatList, StatusBar } from 'react-native';
 import CardQuote from './components/card/card.component';
-import firebase from './services/firebase';
+import databaseFactory from './factories/databaseFactory';
 import {useList} from 'react-firebase-hooks/database';
 import {colors}  from './utils/colors';
 
 
 export default function App() {
 
-  const [cards,loading, erro] = useList(firebase.getAll());
+ 
+
+  const [cards,loading, erro] = useList(databaseFactory.createDatabaseService('firebase'));
   
 
   return (
