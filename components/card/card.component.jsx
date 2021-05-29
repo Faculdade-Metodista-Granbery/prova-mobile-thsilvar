@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { Card, Paragraph, Button, ProgressBar } from 'react-native-paper';
 import { colors } from '../../utils/colors';
@@ -12,20 +12,30 @@ const CardQuote = ({ task, profileImg }) => {
 
     const [playButton, setPlaybutton] = useState("play");
     const [progess, setProgress] = useState(null);
-    const [time, setTime] = useState(1)
+
+   
 
 
     const onProgress = (progress) => {
         setProgress(progess);
     }
 
+    
   
     const handlePlay = () => {
         if (playButton === "play") {
             setPlaybutton("math-norm")
-
-            setProgress(time-0.1);
-
+            let time = 1;
+            for (var i = 0; i < 10; i++) {
+                (function (i) {
+                  setTimeout(function () {
+                      time = time - 0.1;
+                    setProgress(time)
+                  }, 1000*i);
+                })(i);
+              };
+        
+        
         } else {
             setPlaybutton("play")
             setProgress(0)
