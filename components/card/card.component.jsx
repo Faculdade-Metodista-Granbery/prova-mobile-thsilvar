@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
-import { Card, Paragraph, Button, ProgressBar } from 'react-native-paper';
+import { Card, Paragraph, Button, ProgressBar} from 'react-native-paper';
 import { colors } from '../../utils/colors';
 
 
@@ -49,9 +49,11 @@ const CardQuote = ({ task, profileImg }) => {
                 
             />
             <Card.Actions style={styles.actions}>
+            
             </Card.Actions>
+           
         </Card>
-
+ 
     )
 }
 

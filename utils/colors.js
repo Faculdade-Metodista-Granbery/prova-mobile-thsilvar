@@ -5,6 +5,11 @@ export const colors = Object.freeze({
     black:'#000',
     rosa:'#FAE8E0',
     rosaescuro:'#541616',
-    cinza:'#EBF5F7'
-
+    cinza:'#EBF5F7',
+    instagram:{
+        white:'#fff'
+    },
+    instagramDark:{
+        white:'#fff'
+    },
 })
