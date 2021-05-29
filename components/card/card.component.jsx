@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Vibration, Platform  } from 'react-native';
 import { Card, Paragraph, Button, ProgressBar } from 'react-native-paper';
 import { colors } from '../../utils/colors';
 
@@ -8,7 +8,15 @@ import { colors } from '../../utils/colors';
 
 const CardQuote = ({ task, profileImg }) => {
 
-
+    const vibrate = () => {
+        console.log(Platform.OS)
+        if(Platform.OS === 'ios'){
+            const interval = setInterval(() => Vibration.vibrate(), 1000);
+            setTimeout(() => clearInterval(interval), 1000)
+        }else{
+            Vibration.vibrate(1000);
+        }
+    }
 
     const [playButton, setPlaybutton] = useState("play");
     const [progess, setProgress] = useState(null);
@@ -20,22 +28,25 @@ const CardQuote = ({ task, profileImg }) => {
         setProgress(progess);
     }
 
-    
+    const onEnd = () => {
+     
+        vibrate();
+      
+    }
   
     const handlePlay = () => {
         if (playButton === "play") {
             setPlaybutton("math-norm")
-            let time = 1;
+            let time = 0;
             for (var i = 0; i < 10; i++) {
                 (function (i) {
                   setTimeout(function () {
-                      time = time - 0.1;
+                      time = time + 0.1;
                     setProgress(time)
                   }, 1000*i);
                 })(i);
               };
-        
-        
+   onEnd();
         } else {
             setPlaybutton("play")
             setProgress(0)
