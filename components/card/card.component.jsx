@@ -19,9 +19,10 @@ const CardQuote = ({ task, profileImg }) => {
     const handlePlay = () => {
         if (playButton === "play") {
             setPlaybutton("math-norm")
-          
+          setProgress(1)
         } else {
             setPlaybutton("play")
+            setProgress(0)
         }
     }
 
@@ -56,7 +57,7 @@ const CardQuote = ({ task, profileImg }) => {
 
 const styles = StyleSheet.create({
     card: {
-        backgroundColor: colors.cinza,
+        backgroundColor: colors.black,
         margin: 10,
         borderRadius: 20,
         flex: 1,
