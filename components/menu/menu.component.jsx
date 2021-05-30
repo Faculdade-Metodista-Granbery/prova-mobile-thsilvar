@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { FAB, Portal, Provider } from 'react-native-paper';
+import * as React from "react";
+import { FAB, Portal, Provider } from "react-native-paper";
 
 const MyComponent = () => {
   const [state, setState] = React.useState({ open: false });
@@ -13,20 +13,18 @@ const MyComponent = () => {
       <Portal>
         <FAB.Group
           open={open}
-          icon={open ? 'calendar-today' : 'plus'}
+          icon={open ? "calendar-today" : "plus"}
           actions={[
-            
             {
-              icon: 'star',
-              label: 'Preto',
-              onPress: () => console.log('Pressed star'),
+              icon: "star",
+              label: "Preto",
+              onPress: () => console.log("Pressed star"),
             },
             {
-              icon: 'email',
-              label: 'Branco',
-              onPress: () => console.log('Pressed email'),
+              icon: "email",
+              label: "Branco",
+              onPress: () => console.log("Pressed email"),
             },
-           
           ]}
           onStateChange={onStateChange}
           onPress={() => {
